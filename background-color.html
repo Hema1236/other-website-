@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Color Changer</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      font-family: sans-serif;
+    }
+
+    .picker-box {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 12px;
+      padding: 24px 32px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    label {
+      display: block;
+      font-size: 1rem;
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      margin-bottom: 12px;
+    }
+
+    input[type="color"] {
+      width: 80px;
+      height: 80px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      padding: 0;
+      background: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="picker-box">
+    <label>Pick a background colour</label>
+    <input type="color" id="colorPicker" value="#4a90d9">
+  </div>
+
+  <script>
+    const picker = document.getElementById('colorPicker');
+    document.body.style.backgroundColor = picker.value;
+    picker.addEventListener('input', () => {
+      document.body.style.backgroundColor = picker.value;
+    });
+  </script>
+</body>
+</html>
